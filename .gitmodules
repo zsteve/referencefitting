@@ -1,0 +1,9 @@
+[submodule "bicycle"]
+	path = tools/bicycle
+	url = https://github.com/PMBio/bicycle
+[submodule "WENDY"]
+	path = WENDY
+	url = https://github.com/YueWangMathbio/WENDY
+[submodule "tools/renge"]
+	path = tools/renge
+	url = https://github.com/masastat/renge

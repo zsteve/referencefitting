@@ -45,6 +45,9 @@ class Estimator:
         elif self.pca == "separate":
             self.pca = [sk.decomposition.PCA().fit(np.vstack(x)) for x in self.Xs]
             self.M_pca = [torch.tensor(_pca.components_.T, device = self.device) for _pca in self.pca]
+        elif self.pca is None:
+            self.pca = [None for x in self.Xs]
+            self.M_pca = [torch.eye(self.n_genes, dtype = torch.float64).to(self.device) for _ in self.pca]
         self.Xs = [[torch.tensor(x).to(self.device) for x in y] for y in self.Xs]
         # set up scale
         self.scale = scale
